@@ -18,4 +18,25 @@
     /usr/bin/env python3 /opt/rofi-notion/main.py DESIRED_DATABASE_ID
     ```
 
-**You're done!**
+### Alternative option
+
+You can also use this script with **rofi modi**
+1. Create a script like this one `/opt/rofi-notion/run.sh`
+    ```sh
+    #!/bin/bash
+    /usr/bin/env python3 /opt/rofi-notion/main.py DESIRED_DATABASE_ID
+    ```
+2. `chmod +x /opt/rofi-notion/run.sh`
+3. Use this line to run `rofi` with a `modi` config
+    ```
+    rofi --no-startup-id -modi "Quick Notion:/opt/rofi-notion/run.sh" -show "Quick Notion"
+    ```
+
+
+## Exemple `.env`
+
+Get your `API_SECRET` by [creating a new integration](https://www.notion.so/my-integrations).
+
+```
+API_SECRET=secret_AaAAaaAaAaaaaAaaAAAAAaAaAaaaaAAaaAaAAAAAAAa
+```
