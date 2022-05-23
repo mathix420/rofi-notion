@@ -1,0 +1,6 @@
+# Python
+__pycache__/
+*.pyc
+
+# Env
+.env
