@@ -1,0 +1,2 @@
+notion-client==1.0.0
+python-rofi==1.0.1
