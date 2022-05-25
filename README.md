@@ -13,11 +13,11 @@
 
 ## Installation
 
-1. Put the script in a permanent location (ex: /opt/rofi-notion)
+1. Clone the repo in a permanent location (ex: /opt/rofi-notion)
 2. Add a `.env` file at the same location with your Notion integration secret named `API_SECRET`
 3. Add a key binding to your favorite key binding manager to run the following command
     ```
-    /usr/bin/env python3 /opt/rofi-notion/main.py DESIRED_DATABASE_ID
+    /usr/bin/env python3 /opt/rofi-notion DESIRED_DATABASE_ID
     ```
 
 ### Alternative option
@@ -26,7 +26,7 @@ You can also use this script with **rofi modi**
 1. Create a script like this one `/opt/rofi-notion/run.sh`
     ```sh
     #!/bin/bash
-    /usr/bin/env python3 /opt/rofi-notion/main.py DESIRED_DATABASE_ID
+    /usr/bin/env python3 /opt/rofi-notion DESIRED_DATABASE_ID
     ```
 2. `chmod +x /opt/rofi-notion/run.sh`
 3. Use this line to run `rofi` with a `modi` config
