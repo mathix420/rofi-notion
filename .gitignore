@@ -4,3 +4,7 @@ __pycache__/
 
 # Env
 .env
+
+# Project
+run.sh
+run-*.sh
