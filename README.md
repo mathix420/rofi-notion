@@ -1,6 +1,6 @@
 # Rofi-Notion
 
-[![wakatime](https://wakatime.com/badge/user/32448728-a0db-4c3d-a9a6-a4f778c67d05/project/0134b71d-7b21-44b2-8c75-3bde6a5859e9.svg)](https://wakatime.com/badge/user/32448728-a0db-4c3d-a9a6-a4f778c67d05/project/0134b71d-7b21-44b2-8c75-3bde6a5859e9)
+[![wakatime](https://wakatime.com/badge/github/mathix420/rofi-notion.svg)](https://wakatime.com/badge/github/mathix420/rofi-notion)
 
 > This script allows you to quickly create new Notion pages for your databases.
 
