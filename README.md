@@ -2,6 +2,10 @@
 
 [![wakatime](https://wakatime.com/badge/github/mathix420/rofi-notion.svg)](https://wakatime.com/badge/github/mathix420/rofi-notion)
 
+
+https://user-images.githubusercontent.com/37625778/172062053-0332ab05-2782-482b-97ee-98d33854e58d.mp4
+
+
 > This script allows you to quickly create new Notion pages for your databases.
 
 *Example:* I use a Notion database as a task tracker for my business. With Rofi-Notion and some key bindings, I can quickly create a new entry in my Notion database without the hassle of waiting and navigating the slow Notion interface.
