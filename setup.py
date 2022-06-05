@@ -10,6 +10,14 @@ setup(
     author='Arnaud Gissinger',
     author_email='agissing@student.42.fr',
     license='MIT',
+    keywords=[
+        'notion.so',
+        'notion',
+        'rofi',
+        'dmenu',
+        'x11',
+        'i3',
+    ],
     python_requires='>=3.7',
     classifiers=[
                 'Intended Audience :: Developers',
