@@ -1,6 +1,14 @@
 from datetime import datetime
+from functools import partial
 from typing import Any
 from rofi import Rofi
+
+
+def required(transcoder: (...), *args):
+    result = transcoder(*args)
+    if not result:
+        raise Exception('This field is required.')
+    return result
 
 
 def text(r: Rofi, name: str, config: dict, store: Any) -> dict:
@@ -154,7 +162,7 @@ def relation(r: Rofi, name: str, config: dict, choices: dict) -> dict:
 
 
 transcoders = {
-    'title': text,
+    'title': partial(required, text),
     'relation': relation,
     'rich_text': text,
     'number': number,
