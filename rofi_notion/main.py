@@ -1,16 +1,13 @@
 from concurrent.futures import ThreadPoolExecutor
+from .config import get_config, get_creds
 from notion_client import AsyncClient
-from transcoders import transcoders
-from os import getenv
+from .transcoders import transcoders
 from rofi import Rofi
-from sys import argv
 import webbrowser
 import asyncio
 
 
-notion = AsyncClient(auth=getenv('API_SECRET', ''))
 executor = ThreadPoolExecutor(max_workers=10)
-store = dict()
 r = Rofi()
 
 
@@ -29,22 +26,23 @@ def fmt_choices(title_prop):
     return func
 
 
-async def load_relation(name, config):
-    db = await notion.databases.query(config['relation']['database_id'])
-    pages = db['results']
+async def run(notion, db_id):
+    store = dict()
 
-    if not pages:
-        return None
+    async def load_relation(name, config):
+        db = await notion.databases.query(config['relation']['database_id'])
+        pages = db['results']
 
-    page_props = pages[0].get('properties', {}).items()
-    title_prop = list(filter(lambda x: x[1]['type'] == 'title', page_props))[0][0]
-    fmt_fct = fmt_choices(title_prop)
-    choices = dict(map(fmt_fct, pages))  # type: ignore
-    store[name] = choices
+        if not pages:
+            return None
 
+        page_props = pages[0].get('properties', {}).items()
+        title_prop = list(filter(lambda x: x[1]['type'] == 'title', page_props))[0][0]
+        fmt_fct = fmt_choices(title_prop)
+        choices = dict(map(fmt_fct, pages))  # type: ignore
+        store[name] = choices
 
-async def main():
-    db = await notion.databases.retrieve(argv[1])
+    db = await notion.databases.retrieve(db_id)
     properties = db['properties']  # type: ignore
 
     mod_props = list(filter(filter_prop, properties.items()))
@@ -79,10 +77,26 @@ async def main():
 
     # Create the page
     res = await notion.pages.create(
-        parent={'database_id': argv[1]},
+        parent={'database_id': db_id},
         properties=properties
     )
 
     webbrowser.open(res['url'])
 
-asyncio.run(main())
+
+def main(opts):
+    # Get config and creds from config files
+    config = get_config(opts.database_name)
+    creds = get_creds(opts.database_name)
+
+    if not config:
+        raise Exception(f'No config for {opts.database_name}')
+
+    if not creds:
+        creds = get_creds('DEFAULT')
+
+    # Start notion client
+    notion = AsyncClient(auth=creds)
+
+    # Run command
+    asyncio.run(run(notion, config['id']))

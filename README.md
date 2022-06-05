@@ -13,32 +13,40 @@
 
 ## Installation
 
-1. Clone the repo in a permanent location (ex: /opt/rofi-notion) (you want to use symlinks)
-2. Add a `.env` file at the same location with your Notion integration secret named `API_SECRET`
-3. Add a key binding to your favorite key binding manager to run the following command
-    ```
-    /usr/bin/env python3 /opt/rofi-notion DESIRED_DATABASE_ID
-    ```
-
-<!-- ### Alternative option
-
-You can also use this script with **rofi modi**
-1. Create a script like this one `/opt/rofi-notion/run.sh`
-    ```sh
-    #! /usr/bin/env bash
-    /usr/bin/env python3 /opt/rofi-notion DESIRED_DATABASE_ID
-    ```
-2. `chmod +x /opt/rofi-notion/run.sh`
-3. Use this line to run `rofi` with a `modi` config
-    ```
-    rofi --no-startup-id -modi "Quick Notion:/opt/rofi-notion/run.sh" -show "Quick Notion"
-    ``` -->
-
-
-## Exemple `.env`
-
-Get your `API_SECRET` by [creating a new integration](https://www.notion.so/my-integrations).
-
+```bash
+pip install rofi-notion
 ```
-API_SECRET=secret_AaAAaaAaAaaaaAaaAAAAAaAaAaaaaAAaaAaAAAAAAAa
+
+## Usage
+
+```bash
+rofi-notion -h
+```
+
+### 1. Add your Bot Notion secret
+
+Get your `API_SECRET` by [creating a new Notion integration](https://www.notion.so/my-integrations).
+
+```bash
+rofi-notion set-creds $YOUR_API_SECRET
+```
+
+### 2. Link your first database
+
+```bash
+rofi-notion link
+# Follow instructions
+```
+
+### 3. Run `rofi-notion`
+
+```bash
+rofi-notion run $YOUR_DB_NAME
+```
+
+## Add i3 bindings
+
+Simply add a similar line to your i3 config file.
+```config
+bindsym $mod+Insert exec rofi-notion run $YOUR_DB_NAME
 ```

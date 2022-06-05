@@ -7,7 +7,7 @@ from rofi import Rofi
 def required(transcoder: (...), *args):
     result = transcoder(*args)
     if not result:
-        raise Exception('This field is required.')
+        exit('This field is required.')
     return result
 
 
