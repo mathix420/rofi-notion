@@ -20,8 +20,9 @@ https://user-images.githubusercontent.com/37625778/172062053-0332ab05-2782-482b-
 pip install rofi-notion
 ```
 
-## Usage
+## Setup
 
+Check if the installation was successful
 ```bash
 rofi-notion -h
 ```
