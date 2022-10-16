@@ -1,0 +1,1 @@
+- [ ] sync and save db states locally / for faster loading
