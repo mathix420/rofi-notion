@@ -59,3 +59,7 @@ bindsym $mod+Insert exec rofi-notion run $YOUR_DB_NAME
 ## Config
 
 Default config destination is `$XDG_CONFIG_HOME/rofi-notion` or `$HOME/.config/rofi-notion` if `$XDG_CONFIG_HOME` is not set.
+
+## Deployment
+
+Bump version in `setup.py` then run `make`.
