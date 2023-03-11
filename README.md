@@ -62,4 +62,6 @@ Default config destination is `$XDG_CONFIG_HOME/rofi-notion` or `$HOME/.config/r
 
 ## Deployment
 
+### PyPi
+
 Bump version in `setup.py` then run `make`.

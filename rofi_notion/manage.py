@@ -1,5 +1,6 @@
-from PyInquirer import prompt, Validator, ValidationError
+from prompt_toolkit.validation import Validator, ValidationError
 from .config import rm_db, set_config, config, set_creds
+from InquirerPy.resolver import prompt
 from prompt_toolkit import document
 import re
 

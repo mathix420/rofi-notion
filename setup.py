@@ -2,7 +2,7 @@ from setuptools import setup, find_namespace_packages
 
 setup(
     name='rofi-notion',
-    version='1.2.0',
+    version='2.0.0',
     description='Quickly create new Notion pages for your databases with rofi as GUI',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
@@ -45,7 +45,7 @@ setup(
     install_requires=[
         'notion-client==1.0.0',
         'python-rofi==1.0.1',
-        'PyInquirer==1.0.3',
+        'InquirerPy==0.3.4',
         'argparse==1.4.0',
         'PyYAML==6.0',
     ],
