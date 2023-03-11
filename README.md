@@ -32,7 +32,8 @@ rofi-notion -h
 Get your `API_SECRET` by [creating a new Notion integration](https://www.notion.so/my-integrations).
 
 ```bash
-rofi-notion set-creds $YOUR_API_SECRET
+rofi-notion set-creds
+# Then paste your creds
 ```
 
 ### 2. Link your first database
@@ -54,3 +55,7 @@ Simply add a similar line to your i3 config file.
 ```config
 bindsym $mod+Insert exec rofi-notion run $YOUR_DB_NAME
 ```
+
+## Config
+
+Default config destination is `$XDG_CONFIG_HOME/rofi-notion` or `$HOME/.config/rofi-notion` if `$XDG_CONFIG_HOME` is not set.
