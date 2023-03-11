@@ -47,6 +47,7 @@ setup(
         'python-rofi==1.0.1',
         'PyInquirer==1.0.3',
         'argparse==1.4.0',
+        'PyYAML==6.0',
     ],
     packages=find_namespace_packages(include=["rofi_notion", "rofi_notion.*"]),
     entry_points={'console_scripts': ['rofi-notion=rofi_notion.__main__:main']},
