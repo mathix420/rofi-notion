@@ -11,6 +11,9 @@ API_KEY_REGEX = re.compile(r'^secret_\w{43}$')
 
 
 class NameValidator(Validator):
+    def __init__(self, *args, **kwargs) -> None:
+        pass
+
     def validate(self, document: document.Document) -> None:
         if 'DEFAULT' == document.text:
             raise ValidationError(message = 'Cannot be `DEFAULT`', cursor_position = len(document.text))
@@ -19,12 +22,18 @@ class NameValidator(Validator):
 
 
 class DbIdValidator(Validator):
+    def __init__(self, *args, **kwargs) -> None:
+        pass
+
     def validate(self, document: document.Document) -> None:
         if not DB_ID.match(document.text):
             raise ValidationError(message = 'Must match ^[a-f0-9]{32}$', cursor_position = len(document.text))
 
 
 class ApiKeyValidator(Validator):
+    def __init__(self, *args, **kwargs) -> None:
+        pass
+
     def validate(self, document: document.Document) -> None:
         if not API_KEY_REGEX.match(document.text):
             raise ValidationError(message = 'Must match ^secret_\\w{43}$', cursor_position = len(document.text))
