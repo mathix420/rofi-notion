@@ -16,14 +16,16 @@ https://user-images.githubusercontent.com/37625778/172062053-0332ab05-2782-482b-
 
 ## Installation
 
-```bash
-pip install rofi-notion
-```
-
-### Archlinux
+### For archlinux users
 
 ```bash
 pacman -S rofi-notion
+```
+
+### For everyone else
+
+```bash
+pip install rofi-notion
 ```
 
 ## Setup
@@ -68,6 +70,12 @@ Default config destination is `$XDG_CONFIG_HOME/rofi-notion` or `$HOME/.config/r
 
 ## Deployment
 
+Do not forget to bump versions in `setup.py` and `PKGBUILD`.
+
 ### PyPi
 
-Bump version in `setup.py` and `PKGBUILD` then run `make`.
+Run `make` to publish a new version.
+
+### AUR
+
+First publish new release on GitHub, then run `make aur`.
