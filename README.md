@@ -20,6 +20,12 @@ https://user-images.githubusercontent.com/37625778/172062053-0332ab05-2782-482b-
 pip install rofi-notion
 ```
 
+### Archlinux
+
+```bash
+pacman -S rofi-notion
+```
+
 ## Setup
 
 Check if the installation was successful
@@ -64,4 +70,4 @@ Default config destination is `$XDG_CONFIG_HOME/rofi-notion` or `$HOME/.config/r
 
 ### PyPi
 
-Bump version in `setup.py` then run `make`.
+Bump version in `setup.py` and `PKGBUILD` then run `make`.
