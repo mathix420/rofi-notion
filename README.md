@@ -19,7 +19,7 @@ https://user-images.githubusercontent.com/37625778/172062053-0332ab05-2782-482b-
 ### For archlinux users
 
 ```bash
-pacman -S rofi-notion
+yay -S rofi-notion
 ```
 
 ### For everyone else
