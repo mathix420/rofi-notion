@@ -31,12 +31,11 @@ jobs:
           python3 -m pip install -U pip setuptools wheel twine
           pip3 install .
 
-      - name: Package Application
-        uses: JackMcKew/pyinstaller-action-linux@main
+      - name: Create Executable
+        uses: sayyid5416/pyinstaller@v1
         with:
-          path: './'
+          python_ver: '3.8'
+          spec: 'rofi-notion.spec'
+          upload_exe_with_name: 'rofi-notion'
+          options: --onefile, --name "rofi-notion", --console, 
   
-      - uses: actions/upload-artifact@v2
-        with:
-          name: 'rofi-notion'
-          path: ./dist/linux
