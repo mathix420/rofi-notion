@@ -32,9 +32,16 @@ jobs:
           pip3 install .
 
       - name: Create Executable
+        id: create_exec
         uses: sayyid5416/pyinstaller@v1
         with:
           python_ver: '3.10'
           spec: 'rofi-notion.spec'
           upload_exe_with_name: 'rofi-notion'
-  
+
+      - name: Set artifact to release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: ${{ steps.create_exec.outputs.executable_path }}
