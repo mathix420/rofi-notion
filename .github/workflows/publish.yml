@@ -34,7 +34,7 @@ jobs:
       - name: Create Executable
         uses: sayyid5416/pyinstaller@v1
         with:
-          python_ver: '3.8'
+          python_ver: '3.10'
           spec: 'rofi-notion.spec'
           upload_exe_with_name: 'rofi-notion'
   
