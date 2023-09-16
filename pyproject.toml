@@ -1,0 +1,30 @@
+[project]
+name = "rofi-notion"
+version = "2.0.2"
+authors = [
+    {name = "Arnaud Gissinger", email = "agissing@student.42.fr"},
+]
+description = "Quickly create new Notion pages for your databases with rofi as GUI"
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["notion.so", "notion", "rofi", "dmenu", "x11", "i3"]
+license.file = "LICENSE"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Utilities",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [
+    "prompt-toolkit>=3",
+    "notion-client==1.0.0",
+    "python-rofi==1.0.1",
+    "InquirerPy==0.3.4",
+    "argparse==1.4.0",
+    "PyYAML==6.0",
+]
+
+[project.scripts]
+rofi-notion = "rofi_notion.__main__:main"
