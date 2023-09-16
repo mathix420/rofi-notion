@@ -37,5 +37,4 @@ jobs:
           python_ver: '3.8'
           spec: 'rofi-notion.spec'
           upload_exe_with_name: 'rofi-notion'
-          options: --onefile, --name "rofi-notion", --console, 
   
