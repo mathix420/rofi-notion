@@ -74,7 +74,15 @@ Do not forget to bump versions in `setup.py` and `PKGBUILD`.
 
 ### PyPi
 
-Run `make` to publish a new version.
+~~Run `make` to publish a new version.~~
+
+Git tag the new version and push it.
+Then publish the automatically created Draft release.
+
+```
+git tag vX.X.X
+git push --tags
+```
 
 ### AUR
 
