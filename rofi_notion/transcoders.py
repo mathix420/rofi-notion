@@ -2,6 +2,7 @@ from datetime import datetime
 from functools import partial
 from typing import Any
 from rofi import Rofi
+from sys import exit
 
 
 def required(transcoder: (...), *args):
