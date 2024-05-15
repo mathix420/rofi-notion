@@ -168,6 +168,7 @@ transcoders = {
     'rich_text': text,
     'number': number,
     'select': select,
+    'status': select,
     'multi_select': multi_select,
     'date': date,
     'people': people,
