@@ -70,9 +70,16 @@ bindsym $mod+Insert exec rofi-notion run $YOUR_DB_NAME
 
 Default config destination is `$XDG_CONFIG_HOME/rofi-notion` or `$HOME/.config/rofi-notion` if `$XDG_CONFIG_HOME` is not set.
 
-## Deployment
+## Development
 
-Do not forget to bump versions in `setup.py` and `PKGBUILD`.
+Use this command to run the CLI locally.
+```bash
+python3 stub.py
+```
+
+## Publish
+
+Do not forget to bump versions in `pyproject.toml` and `PKGBUILD`.
 
 ### PyPi
 

@@ -3,7 +3,7 @@ requires = ["setuptools >= 56"]
 
 [project]
 name = "rofi-notion"
-version = "2.0.4"
+version = "2.1.0"
 authors = [
     {name = "Arnaud Gissinger", email = "agissing@student.42.fr"},
 ]
