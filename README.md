@@ -19,7 +19,7 @@ https://user-images.githubusercontent.com/37625778/172062053-0332ab05-2782-482b-
 ### For archlinux users (AUR package)
 
 ```bash
-yay -S rofi-notion-bin
+yay -S rofi-notion
 ```
 [AUR package details](https://aur.archlinux.org/packages/rofi-notion)
 
