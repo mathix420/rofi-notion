@@ -94,12 +94,10 @@ def people(r: Rofi, name: str, config: dict, store: Any) -> dict:
 
 
 def checkbox(r: Rofi, name: str, config: dict, store: Any) -> dict:
-    res = r.select(name, ['Yes', 'No'])
-    if res == None:
-        return {}
+    index, key = r.select(name, ['Yes', 'No'], )
     return {
         name: {
-            'checkbox': res == 'Yes'
+            'checkbox': index == 0
         }
     }
 

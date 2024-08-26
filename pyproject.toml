@@ -3,7 +3,7 @@ requires = ["setuptools >= 56"]
 
 [project]
 name = "rofi-notion"
-version = "2.1.0"
+version = "2.1.1"
 authors = [
     {name = "Arnaud Gissinger", email = "agissing@student.42.fr"},
 ]
@@ -22,11 +22,11 @@ classifiers = [
 ]
 dependencies = [
     "prompt-toolkit>=3",
-    "notion-client==1.0.0",
+    "notion-client==2.2.1",
     "python-rofi==1.0.1",
-    "InquirerPy==0.3.4",
+    "InquirerLib==0.0.2",
     "argparse==1.4.0",
-    "PyYAML==6.0",
+    "PyYAML==6.0.2",
 ]
 
 [project.scripts]
