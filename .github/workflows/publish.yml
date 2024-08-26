@@ -40,7 +40,7 @@ jobs:
           upload_exe_with_name: 'rofi-notion'
 
       - name: Set artifact to release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
