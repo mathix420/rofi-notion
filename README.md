@@ -59,6 +59,8 @@ rofi-notion link
 rofi-notion run $YOUR_DB_NAME
 ```
 
+**Note:** When filling in fields, press `Escape` to skip optional fields. Required fields (like title) cannot be skipped.
+
 ## Add i3 bindings
 
 Simply add a similar line to your i3 config file.
