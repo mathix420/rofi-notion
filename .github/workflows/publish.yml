@@ -13,10 +13,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install dependencies
         run: |
-            python3 -m pip install -U pip setuptools wheel twine
+            python3 -m pip install -U pip setuptools wheel twine build
             pip3 install .
       - name: Building
-        run: make build
+        run: python3 -m build
       - name: Publishing
         run: "python3 -m twine upload dist/* -u __token__ -p '${{ secrets.PYPI_TOKEN }}'"
 
