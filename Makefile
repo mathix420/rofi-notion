@@ -15,6 +15,7 @@ aur:
 
 clean:
 	rm -rf dist/
+	rm -rf $(AUR_BUILD_DIR)
 
 build:
 	pip install -U build
