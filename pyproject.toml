@@ -9,6 +9,7 @@ authors = [
 ]
 description = "Quickly create new Notion pages for your databases with rofi as GUI"
 readme = "README.md"
+long-description-content-type = "text/markdown"
 requires-python = ">=3.7"
 keywords = ["notion.so", "notion", "rofi", "dmenu", "x11", "i3"]
 license.file = "LICENSE"
