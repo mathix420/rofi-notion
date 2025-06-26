@@ -19,8 +19,9 @@ def filter_prop(property_tupple):
 def fmt_choices(title_prop):
     def func(page):
         text = page['properties'][title_prop]['title'][0]['plain_text']
-        if page.get('icon', {}).get('type') == 'emoji':
-            emoji = page['icon']['emoji']
+        icon = page.get('icon')
+        if icon and icon.get('type') == 'emoji':
+            emoji = icon['emoji']
             return (f'{emoji} {text}', page['id'])
         return (text, page['id'])
     return func
