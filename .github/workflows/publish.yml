@@ -14,7 +14,6 @@ jobs:
       - name: Install dependencies
         run: |
             python3 -m pip install -U pip setuptools wheel twine build
-            pip3 install .
       - name: Building
         run: python3 -m build
       - name: Publishing
