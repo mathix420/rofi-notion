@@ -30,6 +30,8 @@ list_db.set_defaults(handler=manage.list_db)
 # RUN
 run = subparser.add_parser('run', help='start new row creation flow')
 run.add_argument('database_name', metavar='DB_NAME', type=str, help='database name')
+run.add_argument('-s', '--skip-browser', action='store_true', help='skip opening the browser after creating entry')
+run.add_argument('-q', '--quick-add', action='store_true', help='only fill the first field (fast inbox mode)')
 run.set_defaults(handler=main_handler.main)
 
 

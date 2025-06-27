@@ -27,7 +27,7 @@ def fmt_choices(title_prop):
     return func
 
 
-async def run(notion, db_id):
+async def run(notion, db_id, skip_browser=False, quick_add=False):
     store = dict()
 
     async def load_relation(name, config):
@@ -48,6 +48,10 @@ async def run(notion, db_id):
 
     mod_props = list(filter(filter_prop, properties.items()))
     mod_props = list(sorted(mod_props, key=lambda x: x[1]['type'] != 'title'))
+    
+    # If quick_add is enabled, only keep the first property (title)
+    if quick_add:
+        mod_props = mod_props[:1]
 
     co_routines = dict()
     for name, config in mod_props:
@@ -82,7 +86,8 @@ async def run(notion, db_id):
         properties=properties
     )
 
-    webbrowser.open(res['url'])
+    if not skip_browser:
+        webbrowser.open(res['url'])
 
 
 def main(opts):
@@ -100,4 +105,4 @@ def main(opts):
     notion = AsyncClient(auth=creds)
 
     # Run command
-    asyncio.run(run(notion, config['id']))
+    asyncio.run(run(notion, config['id'], opts.skip_browser, opts.quick_add))

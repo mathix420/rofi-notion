@@ -66,6 +66,8 @@ rofi-notion run $YOUR_DB_NAME
 Simply add a similar line to your i3 config file.
 ```config
 bindsym $mod+Insert exec rofi-notion run $YOUR_DB_NAME
+# Quick capture mode (first field only, no browser)
+bindsym $mod+Shift+Insert exec rofi-notion run $YOUR_DB_NAME -s -q
 ```
 
 ## Config
